@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    color: #0F172A;
+    background-color: #F8FAFC;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', Inter, system-ui, sans-serif;
+  }
+
+  * {
+    border-color: #E2E8F0;
+  }
+
+  :focus-visible {
+    outline: 2px solid #168C8C;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold transition-all duration-200 ease-smooth;
+    border-radius: 14px;
+  }
+  .btn-primary:hover {
+    @apply bg-primary-700 shadow-soft-md;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-primary font-semibold border-2 border-primary transition-all duration-200 ease-smooth;
+    border-radius: 14px;
+  }
+  .btn-secondary:hover {
+    @apply bg-slate-50 border-primary-700;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-sakato-danger text-white font-semibold transition-all duration-200 ease-smooth;
+    border-radius: 14px;
+  }
+  .btn-danger:hover {
+    @apply bg-red-700 shadow-soft-md;
+  }
+
+  .card {
+    @apply bg-sakato-surface border border-sakato-border shadow-soft;
+    border-radius: 20px;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 ease-smooth hover:shadow-soft-lg hover:border-secondary/30;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-sakato-border text-sakato-text transition-all duration-200;
+    border-radius: 14px;
+  }
+  .input-field:focus {
+    @apply border-secondary outline-none ring-2 ring-secondary/20;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
